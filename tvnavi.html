@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8' />
+<title>English TV Navigation</title>
+<script src='https://code.jquery.com/jquery-1.9.1.min.js' ></script>
+<style>
+body{
+	background:#000;
+	color:#888;
+}
+
+iframe{
+	position:absolute;
+	width:70%;
+	top:0%;
+	height:100%;
+	left:30%;
+}
+div {
+	position:absolute;
+	width:30%;
+	top:0%;
+	height:100%;
+	left:0%;
+}
+li{
+	cursor:pointer;
+}
+</style>
+</head>
+<body>
+<iframe></iframe>
+<div>
+<ul>East Euroasia
+<li data-url='https://www.youtube.com/embed/BDmwWSjaTro'>CGTN</li>
+<li data-url='https://www3.nhk.or.jp/nhkworld/common/player/tv/live/embed/embed.html'>NHK Workd</li>
+<li data-url='https://www.youtube.com/embed/0d2A51UeQ1Y'>Arirang TV World</li>
+ <li data-url='https://www.youtube.com/embed/U_XsRZXL2Ic'>CNA</li>
+</ul>
+<ul>Central Euroasia
+<li data-url='https://www.youtube.com/embed/NvCSr7qzAAM'>RT News</li>
+<li data-url='https://www.youtube.com/embed/CV5Fooi8YJA'>TRT World</li>
+<li data-url='https://www.youtube.com/embed/WisZM9CMlTo'>Al Jazeera</li>
+<li data-url='https://www.presstv.com/Live'>Press TV</li>
+</ul>
+<ul>West Euroasia
+<li data-url='https://www.youtube.com/embed/NvqKZHpKs-g'>DW News</li>
+<li data-url='https://www.youtube.com/embed/6N0lbZr_wXs'>France 24</li>
+<li data-url='https://www.youtube.com/embed/9Auq9mYxFEE'>Sky News</li>
+</ul>
+<ul>Americas
+ <li data-url='https://www.youtube.com/embed/dp8PhLsUcFE'>Bloomberg Global News</li>
+ <li data-url='https://www.youtube.com/embed/JnDqMIaJPuE'>UNTV</li>
+</ul>
+</div>
+
+<script>
+$("li").on("click", function(){
+	$("iframe").attr("src", $(this).attr("data-url"));
+});
+</script>
+</body>
+</html>
