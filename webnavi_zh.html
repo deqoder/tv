@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8' />
+<title>中文媒体网站导航</title>
+<script src='https://code.jquery.com/jquery-1.9.1.min.js' ></script>
+<style>
+body{
+	background:#000;
+}
+ul{
+	color:#888;
+}
+li {
+	color:#88f;
+}
+
+iframe{
+	position:absolute;
+	width:70%;
+	top:0%;
+	height:100%;
+	left:30%;
+}
+div {
+	position:absolute;
+	width:30%;
+	top:0%;
+	height:100%;
+	left:0%;
+}
+li{
+	cursor:pointer;
+}
+</style>
+<script>
+function C(countryCode) {
+  return countryCode.toUpperCase().replace(/./g, char =>
+      String.fromCodePoint(127397 + char.charCodeAt())
+  );
+}
+</script>
+</head>
+<body>
+<iframe></iframe>
+<div>
+<ul>东亚
+	<li data-c='MN' data-v='蒙古之声' data-url='http://www.vom.mn/zh' />
+	<li data-c='KR' data-v='KBS' data-url='http://world.kbs.co.kr/service/index.htm?lang=c' />
+	<li data-c='jp' data-v='NHK' data-url='https://www3.nhk.or.jp/nhkworld/zh/' />
+</ul>
+<ul>西亚
+	<li data-c='KZ' data-v='哈通社' data-url='https://www.inform.kz/cn' />
+	<li data-c='ir' data-v='今日波斯' data-url='https://parstoday.com/zh' />
+	<li data-c='tr' data-v='TRT' data-url='https://www.trt.net.tr/chinese/' />
+	<li data-c='qa' data-v='半岛电视台' data-url='https://chinese.aljazeera.net' />
+</ul>
+<ul>东欧
+	<li data-c='RU' data-v='卫星通讯社' data-url='https://sputniknews.cn' />
+	<li data-c='ro' data-v='罗广' data-url='https://www.rri.ro/zh_cn/pages/home' />
+</ul>
+<ul>西欧
+	<li data-c='DE' data-v='德国之声' data-url='https://www.dw.com/zh' />
+	<li data-c='fr' data-v='法广' data-url='https://www.rfi.fr/cn/' />
+	<li data-c='GB' data-v='BBC' data-url='https://bbc.com/zhongwen' />
+</ul>
+<ul>美洲与澳洲
+	<li data-c='us' data-v='美国之音' data-url='https://www.voachinese.com/' />
+	<li data-c='ca' data-v='加广' data-url='https://ici.radio-canada.ca/rci/zh-hans' />
+	<li data-c='au' data-v='澳广' data-url='https://www.abc.net.au/news/chinese/' />
+</ul>
+</div>
+
+<script>
+$("li").on("click", function(){
+	$("iframe").attr("src", $(this).attr("data-url"));
+});
+$("li").each(function() {
+	console.log($(this).attr('data-url'));
+	$(this).html(C($(this).attr('data-c')) + ' ' + $(this).attr('data-v'))
+});
+</script>
+</body>
+</html>
