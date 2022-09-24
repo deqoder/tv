@@ -21,6 +21,7 @@ iframe{
 	top:0%;
 	height:100%;
 	left:30%;
+	background:#fff;
 }
 div {
 	position:absolute;
@@ -49,14 +50,28 @@ function C(countryCode) {
 	<li data-c='KR' data-v='KBS' data-url='http://world.kbs.co.kr/service/index.htm?lang=c' />
 	<li data-c='jp' data-v='NHK' data-url='https://www3.nhk.or.jp/nhkworld/zh/' />
 </ul>
-<ul>西亚
+<ul>东南亚
+	<li data-c='vn' data-v='越通社' data-url='https://zh.vietnamplus.vn/' />
+	<li data-c='vn' data-v='人民报' data-url='https://cn.nhandan.vn/' />
+	<li data-c='vn' data-v='越南之声' data-url='https://vovworld.vn/zh-CN.vov' />
+	<li data-c='id' data-v='印尼之声' data-url='https://voinews.id/mandarin/'>
+</ul>
+<ul>中亚
 	<li data-c='KZ' data-v='哈通社' data-url='https://www.inform.kz/cn' />
+	<li data-c='uz' data-v='乌新社' data-url='https://uza.uz/cn' />
 	<li data-c='ir' data-v='今日波斯' data-url='https://parstoday.com/zh' />
+	<li data-c='ir' data-v='古兰经通讯社' data-url='https://iqna.ir/zh' />
+</ul>
+<ul>西亚
 	<li data-c='tr' data-v='TRT' data-url='https://www.trt.net.tr/chinese/' />
+	<li data-c='az' data-v='阿新社' data-url='https://azertag.az/chn' />
 	<li data-c='qa' data-v='半岛电视台' data-url='https://chinese.aljazeera.net' />
+	<li data-c='ae' data-v='阿通社' data-url='https://wam.ae/zh-CN' />
 </ul>
 <ul>东欧
 	<li data-c='RU' data-v='卫星通讯社' data-url='https://sputniknews.cn' />
+	<li data-c='BY' data-v='白通社' data-url='https://chn.belta.by/' />
+	<li data-c='ua' data-v='乌通社' data-url='https://www.ukrinform.org/' />
 	<li data-c='ro' data-v='罗广' data-url='https://www.rri.ro/zh_cn/pages/home' />
 </ul>
 <ul>西欧
@@ -80,7 +95,6 @@ $("li").on("click", function(){
 	$("iframe").attr("src", $(this).attr("data-url"));
 });
 $("li").each(function() {
-	console.log($(this).attr('data-url'));
 	$(this).html(C($(this).attr('data-c')) + ' ' + $(this).attr('data-v'))
 });
 </script>
