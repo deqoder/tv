@@ -14,7 +14,21 @@ ul{
 li {
 	color:#88f;
 }
-
+#head{
+	position:absolute;
+	width:70%;
+	top:0%;
+	height:100%;
+	left:30%;
+	color:#888;
+	background:#000;
+	text-align:center;
+	opacity:50%;
+	display:none;
+	z-index:1;
+	margin:0;
+	padding-top:20%;
+}
 iframe{
 	position:absolute;
 	width:70%;
@@ -44,6 +58,7 @@ function C(countryCode) {
 </script>
 </head>
 <body>
+<h1 id='head'>加载中</h1>
 <iframe></iframe>
 <div>
 <ul>东亚
@@ -109,6 +124,10 @@ function C(countryCode) {
 <script>
 $("li").on("click", function(){
 	$("iframe").attr("src", $(this).attr("data-url"));
+	$("#head").css('display', 'inline');
+	$("iframe").on("load", function() {
+		$("#head").css('display', 'none');
+	});
 });
 $("li").each(function() {
 	$(this).html(C($(this).attr('data-c')) + ' ' + $(this).attr('data-v'))
