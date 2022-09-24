@@ -3,7 +3,7 @@
 <head>
 <meta charset='utf-8' />
 <title>中文媒体网站导航</title>
-<script src='https://code.jquery.com/jquery-1.9.1.min.js' ></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js' ></script>
 <style>
 body{
 	background:#000;
@@ -124,6 +124,7 @@ function C(countryCode) {
 <script>
 $("li").on("click", function(){
 	$("iframe").attr("src", $(this).attr("data-url"));
+	$("#head").html($(this).attr("data-url") + "<br/>加载中...")
 	$("#head").css('display', 'inline');
 	$("iframe").on("load", function() {
 		$("#head").css('display', 'none');
