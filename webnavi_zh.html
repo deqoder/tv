@@ -129,6 +129,11 @@ $("li").on("click", function(){
 		$("#head").css('display', 'none');
 	});
 });
+$("li").hover(function() {
+	$(this).html(C($(this).attr('data-c')) + ' ' + $(this).attr('data-v') + ' ' + $(this).attr('data-url'));
+},function() {
+	$(this).html(C($(this).attr('data-c')) + ' ' + $(this).attr('data-v'))
+});
 $("li").each(function() {
 	$(this).html(C($(this).attr('data-c')) + ' ' + $(this).attr('data-v'))
 });
