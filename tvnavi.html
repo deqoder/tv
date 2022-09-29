@@ -33,31 +33,42 @@ li{
 <iframe></iframe>
 <div>
 <ul>East Euroasia
-<li data-url='https://www.cgtn.com/tv'>CGTN</li>
-<li data-url='https://www3.nhk.or.jp/nhkworld/common/player/tv/live/embed/embed.html'>NHK World</li>
-<li data-url='https://www.arirang.com/player/onair_tv.asp'>Arirang TV</li>
-<li data-url='https://www.channelnewsasia.com/watch'>CNA</li>
+	<li data-url='https://www.cgtn.com/tv'><b>CN</b>CGTN</li>
+	<li data-url='https://www3.nhk.or.jp/nhkworld/common/player/tv/live/embed/embed.html'><b>JP</b>NHK World</li>
+	<li data-url='https://www.arirang.com/player/onair_tv.asp'><b>KR</b>Arirang TV</li>
+	<li data-url='https://www.channelnewsasia.com/watch'><b>SG</b>CNA</li>
 </ul>
 <ul>Central Euroasia
-<li data-url='https://www.rt.com/on-air'>RT News</li>
-<li data-url='https://www.trtworld.com/live'>TRT World</li>
-<li data-url='https://www.aljazeera.com/live'>Al Jazeera</li>
-<li data-url='https://www.presstv.ir/Live'>Press TV</li>
+	<li data-url='https://www.rt.com/on-air'><b>RU</b>RT News</li>
+	<li data-url='https://www.trtworld.com/live'><b>TR</b>TRT World</li>
+	<li data-url='https://www.aljazeera.com/live'><b>QA</b>Al Jazeera</li>
+	<li data-url='https://www.presstv.ir/Live'><b>IR</b>Press TV</li>
 </ul>
 <ul>West Euroasia
-<li data-url='https://tvpworld.com/51656539/our-stream'>TVP World</li>
-<li data-url='https://www.dw.com/en/live-tv/s-100825'>DW News</li>
-<li data-url='https://www.france24.com/en/live'>France 24</li>
-<li data-url='https://news.sky.com/watch-live'>Sky News</li>
+	<li data-url='http://www.euronews.com/live'><b>EU</b>Euro News</li>
+	<li data-url='https://tvpworld.com/51656539/our-stream'><b>PL</b>TVP World</li>
+	<li data-url='https://www.dw.com/en/live-tv/s-100825'><b>DE</b>DW News</li>
+	<li data-url='https://www.france24.com/en/live'><b>FR</b>France 24</li>
+	<li data-url='https://news.sky.com/watch-live'><b>GB</b>Sky News</li>
 </ul>
 <ul>Americas
- <li data-url='https://media.un.org/en/webtv'>UNTV</li>
+	<li data-url='https://media.un.org/en/webtv'><b>UN</b>UNTV</li>
 </ul>
 </div>
 
 <script>
 $("li").on("click", function(){
 	$("iframe").attr("src", $(this).attr("data-url"));
+});
+function toflag(countryCode) {
+  return countryCode.toUpperCase().replace(/./g, char =>
+      String.fromCodePoint(127397 + char.charCodeAt())
+  );
+}
+
+$("li b").each(function() {
+	var flag = toflag($(this).text());
+	$(this).text(flag + ' ')
 });
 </script>
 </body>
