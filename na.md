@@ -13,7 +13,7 @@
 [pt](https://portuguese.news.cn/index.htm)
 ### Central and South Asia
 * Khavar: [tg](https://khovar.tj/rus/) [ru](https://khovar.tj/rus/) [fa](https://khovar.tj/far/) [ar](https://khovar.tj/ara/)
-* Turkmenistan Today: [tk](https://tdh.gov.tm/tk) en(https://tdh.gov.tm/en) ru(https://tdh.gov.tm/ru)
+* Turkmenistan Today: [tk](https://tdh.gov.tm/tk) [en](https://tdh.gov.tm/en) [ru](https://tdh.gov.tm/ru)
 ### Caucasus and West Asia
 ## Europe
 ### East and Southeast Europe
